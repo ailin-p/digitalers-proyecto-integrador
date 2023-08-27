@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/registerstyle.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+    ============ HEADER =====================
+    ===================================== -->
+    
+    <a href="/index.html" class="backHome">
+        <img src="/assets/images/logo.png" alt="logo del sitio">
+    </a>
+
+    <main class="main-container-form row d-flex align-content-center justify-content-evenly">
+        <section class="info-register d-flex flex-column text-center align-items-center col-sm-12 col-md-4">
+            <p class="register-text">Los mejores beneficios te están esperando, ¡registrate!</p>
+            <div class="container-services" >
+                <section class="product-service">
+                    <i class="fa-solid fa-heart"></i>
+                    <h4>Servicio de Cuidado y Bienestar</h4>
+                </section>
+                <section class="product-service">
+                    <i class="fa-solid fa-paw"></i>
+                    <h4>Entrenamiento Personalizado<h4>        
+                </section>
+                <section class="product-service">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <h4>Productos de Alta Calidad</h4>
+                </section>
+            </div>
+        </section>
+        
+        <section class="form-container col-sm-12 col-md-4">
+            <form class="contact-form" action="" method="">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required maxlength="20">
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required maxlength="25">
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title="La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra, un dígito y uno de los siguientes caracteres especiales: @$!%*#?&" placeholder="Mínimo 8 caracteres con letra, dígito y carácter especial">
+
+                <label for="repetir-contraseña">Repetir Contraseña</label>
+                <input type="password" id="repetir-contraseña" name="repetir-contraseña" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="50" minlength="8">
+
+                <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" max="2005-01-01" required>
+
+                <label for="provincia">Provincia</label>
+                <select id="provincia" name="provincia">
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Catamarca">Catamarca</option>
+                    <option value="Chaco">Chaco</option>
+                    <option value="Chubut">Chubut</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Corrientes">Corrientes</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="La Pampa">La Pampa</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquén">Neuquén</option>
+                    <option value="Río Negro">Río Negro</option>
+                    <option value="Salta">Salta</option>
+                    <option value="San Juan">San Juan</option>
+                    <option value="San Luis">San Luis</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Santiago del Estero">Santiago del Estero</option>
+                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                    <option value="Tucumán">Tucumán</option>
+                </select>
+
+                <label for="observaciones">Observaciones</label>
+                <textarea class="input-textarea" id="observaciones" name="observaciones" maxlength="200"></textarea>
+                <div class="text-center">
+                   <input type="submit" value="Enviar"> 
+                </div>
+                
+            </form>
+        </section>
+
+    </main>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>

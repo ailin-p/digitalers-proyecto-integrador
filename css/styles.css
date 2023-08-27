@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;900&display=swap');
+
+
+@media only screen and (width < 768px) {
+    .carousel-desktop {
+        display: none;
+    }
+}
+
+@media only screen and (width > 768px) {
+    .carousel-mobile {
+        display: none;
+    }
+}
+
+:root {
+    --primary-color: #FF7A00;
+    --secondary-color: #FFD323;
+    --tertiary-color: #29A649;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: var(--primary-color);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cart-icon, .user-icon{
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+#navbarSupportedContent {
+    margin-bottom: 10px;
+}
+
+@media only screen and (width > 1024px) {
+
+    .user-name, .material-symbols-outlined{
+        padding: 0;
+        margin: 0;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+    } 
+    
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    a.nav-link {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        transition: transform 0.5s;
+    }
+    
+    a.nav-link:hover {
+        transform: scale(1.1);
+    }
+    
+    a.nav-link::before {
+        content: '';
+		position: absolute;
+		width: 100%;
+        justify-content: center;
+		height: 3px;
+		border-radius: 2px;
+		background-color: var(--primary-color);
+		bottom: 0;
+		left: 0;
+		transform-origin: right;
+		transform: scaleX(0);
+		transition: transform .3s ease-in-out;
+    }
+
+    a.nav-link:hover::before {
+        transform-origin: left;
+		transform: scaleX(1);
+    }
+
+    .carousel-mobile {
+        display: none;
+    }
+
+    .card-product:hover {
+        box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        -webkit-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        -moz-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        transform: scale(1.01);
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card-product:hover .card-price {
+        animation: wiggle 1.5s linear 1;
+    }
+
+    .card-product:hover img {
+        top: 27%;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .card-container .card-product:hover:before {
+        clip-path: circle(300px at 95% -16%);
+    }
+
+    .card-product-footer .card-buy:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+a.nav-link {
+    font-weight: 600;
+    margin: 5px;
+}
+
+.navbar-toggler{
+    background-color: #FFD323;
+    color: #FFD323;
+}
+
+.carousel {
+        margin-top: 70px;
+    }
+
+/* Estilos para la card de producto */
+
+.main-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+    gap: 1rem;
+    justify-content: center;
+    margin: 8px;
+}
+
+.card-product {
+    width: 300px;
+    height: 450px;
+    border-radius: 20px;
+    margin: 20px;
+    display: flex;
+    flex-flow: column;
+    box-shadow: 4px 9px 39px -7px rgba(99,99,99,0.94);
+    -webkit-box-shadow: 4px 9px 39px -7px rgba(99,99,99,0.94);
+    -moz-box-shadow: 4px 9px 39px -7px rgba(99,99,99,0.94);
+    overflow: hidden;
+    transform: scale(1.0);
+    transition: all .5s ease-in-out;
+    padding: 10px;
+}
+
+.card-product:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(200px at 93% 4%);
+    transition: 0.5s ease-in-out;
+}
+
+.card-container .card-product:nth-child(3n+1):before {
+    background-color: var(--primary-color);
+}
+
+.card-container .card-product:nth-child(3n+2):before {
+    background-color: var(--secondary-color);
+}
+
+.card-container .card-product:nth-child(3n+0):before,
+.card-container .card:nth-child(3n):before {
+    background-color: var(--tertiary-color);
+}
+
+.card-product-header img {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%) scale(1.0);
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.card-product-header {
+    height: 170px;
+    display: flex;
+    flex-grow: 1;
+    margin: 0 auto;
+}
+
+.card-product-header img {
+    margin-top: 40px;
+    height: 250px;
+    width: 250px;
+    transition: all .3s ease-in;
+}
+
+.card-main {
+    padding: 2px 16px 16px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-main h5 {
+    color: rgb(41, 41, 41);
+    margin-bottom: 0;
+}
+
+.card-main p {
+    font-size: 15px;
+    line-height: 14px;
+    margin: 8px;
+}
+
+.card-prices {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.admission-date {
+    font-style: italic;
+    color: #666;
+}
+
+.card-price {
+    font-size: 1.5rem;
+    color: var(--tertiary-color);
+}
+
+.card-product-footer {
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-product-footer button {
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 6px;
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.card-product-footer .card-details {
+    border: none;
+}
+
+/* Estilos para los servicios */
+
+.container-services {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+    background-color: #f4f4f4;
+  }
+  
+  .product-service {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    transition: .7s;
+  }
+
+  .product-service i {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .product-service h4 {
+    color: #2b2b2b;
+    margin-top: 0;
+  }
+
+  .product-service p {
+    display: none;
+  }
+
+/* Estilos para footer */
+
+footer {
+    background-color: var(--secondary-color);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+.footer-section {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-section-socials, .footer-section-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section-socials h4,
+.footer-section-socials ul, .footer-section-info ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section img {
+    width: 100px;
+    height: 100px;
+}
+
+.footer-section i {
+    font-size: 20px;
+}
+
+.social-icons i {
+    font-size: 20px;
+    color: #000;
+}
+
+.social-icons li, .footer-section-info li {
+    list-style-type: none;
+    margin: 1rem;
+}
+
+ul.social-icons {
+    display: flex;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    }
+
+.newsletter-form input,
+.newsletter-form button {
+    margin: 5px;
+    padding: 8px;
+}
+
+.newsletter-form input {
+    width: 90%;
+    }
+    
+.newsletter-form input:focus {
+        outline-color: #29A649;
+    }
+
+.footer-rights {
+    text-align: center;
+    font-size: 13px;
+    margin: 10px 0 0 0 !important;
+}
+
+@media only screen and (min-width:768px) {
+    .newsletter-form input {
+        width: 40%;
+        }
+}
+
+@media only screen and (min-width:1024px) {
+
+    .product-service:hover {
+        box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        -webkit-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        -moz-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        border-radius: 10px;
+    }
+
+    .product-service p {
+        display: block;
+        color: #2b2b2b;
+      }
+    
+    .product-service i {
+        font-size: 50px;
+      }
+
+      @keyframes wiggle {
+        0%, 7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%, 100% {
+          transform: rotateZ(0);
+        }
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+          }
+          25% {
+            transform: scale(1.2);
+          }
+          50% {
+            transform: scale(0.8);
+          }
+          75% {
+            transform: scale(1.1);
+          }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .product-service:hover .fa-heart{
+        animation: heartbeat 1.5s linear infinite;
+      }
+    
+    .product-service:hover .fa-basket-shopping{
+        animation: bounce 1s linear infinite;
+      }
+
+      .product-service:hover .fa-paw{
+        animation: wiggle 1.5s linear infinite;
+      }
+
+    .main-footer {
+        display: flex;
+    }
+
+    .footer-section {
+        margin-top: 10px;
+        flex: 1;
+    }
+
+    .footer-section img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .footer-section h4 {
+        margin-bottom: 5px;
+    }
+
+    .social-icons i {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    .social-icons i:hover {
+        color: var(--primary-color);
+    }
+
+    .newsletter-form input {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .newsletter-form button {
+        background-color: var(--primary-color);
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        transition: color, 0.5s;
+    }
+
+.newsletter-form button:hover {
+        background-color: var(--tertiary-color);
+    }
+
+    .footer-rights {
+        font-size: 15px;
+        margin: 0;
+    }
+
+}
+
+
+
+
+
+
