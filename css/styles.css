@@ -287,6 +287,8 @@ ul.social-icons {
 
 .newsletter-form input {
     min-width: 250px;
+    border: 1px;
+    border-radius: 5px;
 }
 
 .newsletter-form button {
@@ -305,6 +307,11 @@ ul.social-icons {
 .newsletter-form input:focus {
         outline-color: #29A649;
     }
+
+input:focus, textarea:focus {
+        outline-color: #29A649;
+    }
+        
 
 .footer-rights {
     text-align: center;

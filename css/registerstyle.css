@@ -87,7 +87,6 @@
   /* Estilos para el formulario */
 
 .contact-form {
-    background-color: transparent;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
