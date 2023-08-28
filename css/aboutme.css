@@ -4,6 +4,10 @@
     --tertiary-color: #29A649;
 }
 
+body {
+    background-color: var(--secondary-color) !important;
+}
+
 .backHome {
     position: fixed;
     top: 10px;
@@ -21,19 +25,89 @@
     margin-top: 100px;
 }
 
-
-.card-about {
-    transform: none;
-    }
+.main-about-container .container-card-about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .main-about-container .card-about {
+    position: relative;
     width: 300px;
     height: 600px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-left: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .card-about .about-content {
     transform: translateY(-10px);
     opacity: 1;
+}
+
+.about-content img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+}
+
+.about-content {
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+}
+
+.about-content h2 {
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 6em;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+.about-content h3 {
+    font-size: 1.8em;
+    color: black;
+    z-index: -1;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.about-links a {
+    display: none;
+    position: relative;
+    padding: 8px 20px;
+    margin: 10px;
+    background: var(--primary-color);
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all .4s ease-in-out;
+}
+
+.main-about-container .about-content h2 {
+    font-size: 4.5em;
+}
+
+.main-about-container .about-content h3 {
+    font-size: 1.5em;
 }
 
 .card-about .about-links {
@@ -45,16 +119,18 @@
     transform: translateY(-30px);
 }
 
-.main-about-container .about-content h2 {
-    font-size: 4.5em;
+/* La idea no era hacer dos media queries pero no se me ocurrió otra forma de hacer que sólo en pantallas pequeñas no se muestre la animación de js que tiene la card */
+
+@media only screen and (width <= 1024px) {
+
+    .main-about-container .card-about {
+        transform: none !important;
+    }
 }
 
-.main-about-container .about-content h3 {
-    font-size: 1.5em;
-}
 
 
-@media only screen and (width > 1024px) {
+@media only screen and (width >= 1024px) {
 
     header .backHome {
         top: 30px;
@@ -67,7 +143,7 @@
     }
 
     .about-links a:hover {
-        background-color: #35de5f;
+        background-color: #dbb51d;
     }
 
     .main-about-container .container-card-about {
@@ -118,13 +194,13 @@
     
     .about-content h3 {
         font-size: 1.8em;
-        color: white;
+        color: black;
         z-index: -1;
     }
     
     .about-content p {
         font-size: 1.2rem;
-        color: white;
+        color: black;
         font-weight: 300;
         margin-top: 20px;
     }
@@ -134,7 +210,7 @@
         position: relative;
         padding: 8px 20px;
         margin: 10px;
-        background: #1f8338;
+        background: var(--primary-color);
         color: black;
         border-radius: 20px;
         text-decoration: none;
@@ -143,9 +219,7 @@
     }
 }
 
-body {
-    background-color: var(--tertiary-color) !important;
-}
+
 
 
 
