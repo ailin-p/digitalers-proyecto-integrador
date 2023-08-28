@@ -286,7 +286,7 @@ ul.social-icons {
 }
 
 .newsletter-form input {
-    max-width: 300px;
+    min-width: 250px;
 }
 
 .newsletter-form button {

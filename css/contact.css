@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #FF7A00;
+    --secondary-color: #FFD323;
+    --tertiary-color: #29A649;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.contact-form {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (width >= 1024px) {
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
