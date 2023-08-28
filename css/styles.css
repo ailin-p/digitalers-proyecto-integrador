@@ -32,220 +32,6 @@ body {
     color: var(--primary-color);
 }
 
-@media only screen and (width <= 768px) {
-
-    .carousel-desktop {
-        display: none;
-    }
-
-    #navbarSupportedContent {
-        margin-bottom: 10px;
-    }
-}
-
-@media only screen and (width >= 768px) {
-    .carousel-mobile {
-        display: none;
-    }
-}
-
-@media only screen and (width >= 1024px) {
-    
-    .carousel-mobile {
-        display: none;
-    }
-
-    .navbar-expand-lg .navbar-nav {
-        flex-direction: row;
-        margin: 0 auto;
-    }
-    
-    header .navbar-nav .nav-link {
-        padding: 0;
-        margin: 0;
-        position: relative;
-        transition: transform 0.5s;
-    }
-    
-    a.nav-link:hover {
-        transform: scale(1.1);
-    }
-    
-    a.nav-link::before {
-        content: '';
-		position: absolute;
-		width: 100%;
-        justify-content: center;
-		height: 3px;
-		border-radius: 2px;
-		background-color: var(--primary-color);
-		bottom: 0;
-		left: 0;
-		transform-origin: right;
-		transform: scaleX(0);
-		transition: transform .3s ease-in-out;
-    }
-
-    a.nav-link:hover::before {
-        transform-origin: left;
-		transform: scaleX(1);
-    }
-
-    .card-product:hover {
-        box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
-        -webkit-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
-        -moz-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
-        transform: scale(1.01);
-        transition: transform 0.3s ease-in-out;
-        transform: translateY(-5px);
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .card-product:hover .card-price {
-        animation: wiggle 1.5s linear 1;
-    }
-
-    .card-product:hover img {
-        top: 27%;
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    .card-container .card-product:hover:before {
-        clip-path: circle(300px at 95% -16%);
-    }
-
-    .card-product-footer .card-buy:hover {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    .product-service:hover {
-        box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
-        -webkit-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
-        -moz-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
-        border-radius: 10px;
-    }
-
-    .container-services .product-service p {
-        display: block;
-        color: #2b2b2b;
-      }
-    
-    .container-services .product-service i {
-        font-size: 50px;
-      }
-
-      @keyframes wiggle {
-        0%, 7% {
-          transform: rotateZ(0);
-        }
-        15% {
-          transform: rotateZ(-15deg);
-        }
-        20% {
-          transform: rotateZ(10deg);
-        }
-        25% {
-          transform: rotateZ(-10deg);
-        }
-        30% {
-          transform: rotateZ(6deg);
-        }
-        35% {
-          transform: rotateZ(-4deg);
-        }
-        40%, 100% {
-          transform: rotateZ(0);
-        }
-    }
-
-    @keyframes heartbeat {
-        0%, 100% {
-            transform: scale(1);
-          }
-          25% {
-            transform: scale(1.2);
-          }
-          50% {
-            transform: scale(0.8);
-          }
-          75% {
-            transform: scale(1.1);
-          }
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-15px);
-      }
-    }
-
-    .container-services .product-service:hover .fa-heart{
-        animation: heartbeat 1.5s linear infinite;
-      }
-    
-    .container-services .product-service:hover .fa-basket-shopping{
-        animation: bounce 1s linear infinite;
-      }
-
-    .container-services .product-service:hover .fa-paw {
-        animation: wiggle 1.5s linear infinite;
-      }
-
-    footer .main-footer {
-        display: flex;
-    }
-
-    footer .footer-section {
-        margin-top: 10px;
-        flex: 1;
-    }
-
-    footer .footer-section img {
-        width: 150px;
-        height: 150px;
-    }
-
-    footer .footer-section h4 {
-        margin-bottom: 5px;
-    }
-
-    footer .main-footer .social-icons i {
-        margin-top: 20px;
-        font-size: 25px;
-    }
-
-    footer .main-footer .social-icons i:hover {
-        color: var(--primary-color);
-    }
-
-    footer .main-footer .newsletter-form input {
-        margin-top: 10px;
-        width: 90%;
-    }
-
-    footer .main-footer .newsletter-form button {
-        background-color: var(--primary-color);
-        margin-top: 10px;
-        border: none;
-        cursor: pointer;
-        transition: color, 0.5s;
-    }
-
-    footer .main-footer .newsletter-form button:hover {
-        background-color: var(--tertiary-color);
-    }
-
-    footer .main-footer .footer-rights {
-        font-size: 15px;
-        margin: 0;
-    }
-
-}
-
 .navbar-nav {
     text-align: center;
 }
@@ -369,6 +155,7 @@ a.nav-link {
 }
 
 .card-main p {
+    text-align: center;
     font-size: 15px;
     line-height: 14px;
     margin: 8px;
@@ -376,7 +163,7 @@ a.nav-link {
 
 .card-prices {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     align-items: center;
 }
@@ -498,6 +285,10 @@ ul.social-icons {
     align-items: center;
 }
 
+.newsletter-form input {
+    max-width: 300px;
+}
+
 .newsletter-form button {
     background-color: var(--primary-color);
     color: black;
@@ -510,10 +301,6 @@ ul.social-icons {
     margin: 5px;
     padding: 8px;
 }
-
-.newsletter-form input {
-    width: 90%;
-    }
     
 .newsletter-form input:focus {
         outline-color: #29A649;
@@ -525,14 +312,220 @@ ul.social-icons {
     margin: 10px 0 0 0 !important;
 }
 
-@media only screen and (min-width:768px) {
-    .newsletter-form input {
-        width: 40%;
-        }
+@media only screen and (width <= 768px) {
+
+    .carousel-desktop {
+        display: none;
+    }
+
+    #navbarSupportedContent {
+        margin-bottom: 10px;
+    }
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (width >= 768px) {
+    .carousel-mobile {
+        display: none;
+    }
+}
 
+@media only screen and (width >= 1024px) {
+    
+    .carousel-mobile {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    header .navbar-nav .nav-link {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        transition: transform 0.5s;
+    }
+    
+    a.nav-link:hover {
+        transform: scale(1.1);
+    }
+    
+    a.nav-link::before {
+        content: '';
+		position: absolute;
+		width: 100%;
+        justify-content: center;
+		height: 3px;
+		border-radius: 2px;
+		background-color: var(--primary-color);
+		bottom: 0;
+		left: 0;
+		transform-origin: right;
+		transform: scaleX(0);
+		transition: transform .3s ease-in-out;
+    }
+
+    a.nav-link:hover::before {
+        transform-origin: left;
+		transform: scaleX(1);
+    }
+
+    .card-product:hover {
+        box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        -webkit-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        -moz-box-shadow: 4px 9px 42px -7px rgba(61,61,61,0.95);
+        transform: scale(1.01);
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-5px);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card-product:hover .card-price {
+        animation: wiggle 1.5s linear 1;
+    }
+
+    .card-product:hover img {
+        top: 27%;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .card-container .card-product:hover:before {
+        clip-path: circle(300px at 95% -16%);
+    }
+
+    .card-product-footer .card-details:hover {
+        transform: scale(1.3);
+    }
+
+    .card-product-footer .card-buy:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .product-service:hover {
+        box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        -webkit-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        -moz-box-shadow: -8px 11px 34px 3px rgba(69,69,69,0.43);
+        border-radius: 10px;
+    }
+
+    .container-services .product-service p {
+        display: block;
+        color: #2b2b2b;
+      }
+    
+    .container-services .product-service i {
+        font-size: 50px;
+      }
+
+      @keyframes wiggle {
+        0%, 7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%, 100% {
+          transform: rotateZ(0);
+        }
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+          }
+          25% {
+            transform: scale(1.2);
+          }
+          50% {
+            transform: scale(0.8);
+          }
+          75% {
+            transform: scale(1.1);
+          }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .container-services .product-service:hover .fa-heart{
+        animation: heartbeat 1.5s linear infinite;
+      }
+    
+    .container-services .product-service:hover .fa-basket-shopping{
+        animation: bounce 1s linear infinite;
+      }
+
+    .container-services .product-service:hover .fa-paw {
+        animation: wiggle 1.5s linear infinite;
+      }
+
+    footer .main-footer {
+        display: flex;
+    }
+
+    footer .footer-section {
+        margin-top: 10px;
+        flex: 1;
+    }
+
+    footer .footer-section img {
+        width: 150px;
+        height: 150px;
+    }
+
+    footer .footer-section h4 {
+        margin-bottom: 5px;
+    }
+
+    footer .main-footer .social-icons i {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    footer .main-footer .social-icons i:hover {
+        color: var(--primary-color);
+    }
+
+    footer .main-footer .newsletter-form input {
+        margin-top: 10px;
+    }
+
+    footer .main-footer .newsletter-form button {
+        background-color: var(--primary-color);
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        transition: color, 0.5s;
+    }
+
+    footer .main-footer .newsletter-form button:hover {
+        background-color: var(--tertiary-color);
+    }
+
+    footer .main-footer .footer-rights {
+        font-size: 15px;
+        margin: 0;
+    }
 
 }
 
