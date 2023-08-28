@@ -59,14 +59,13 @@
 
 /* Estilos para los servicios */
 
-.container-services section {
-    margin-top: 10px;
+.container-services {
+    padding: 20px !important;
 }
 
-.container-services {
-    padding: 0 !important;
-    background-color: #f4f4f4;
-  }
+.container-services section {
+    margin-top: 20px;
+}
   
   .product-service {
     text-align: center;

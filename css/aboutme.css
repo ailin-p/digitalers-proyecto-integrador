@@ -25,12 +25,12 @@ body {
     margin-top: 100px;
 }
 
-.main-about-container .container-card-about {
+/* .main-about-container  {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .main-about-container .card-about {
     position: relative;
@@ -72,7 +72,7 @@ body {
     right: 0;
     font-size: 4.5em;
     font-style: italic;
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.046);
     pointer-events: none;
 }
 
@@ -133,13 +133,6 @@ body {
 
     .about-links a:hover {
         background-color: #dbb51d;
-    }
-
-    .main-about-container .container-card-about {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     
     .main-about-container .card-about {

@@ -206,10 +206,10 @@ a.nav-link {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 50px;
-    background-color: #f4f4f4;
   }
   
   .product-service {
+    border-radius: 7px;
     flex: 1;
     text-align: center;
     padding: 20px;
