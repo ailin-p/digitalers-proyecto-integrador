@@ -65,28 +65,30 @@
 
     <!-- MAIN CONTAINER -->
 
-    <main class="contact-container d-flex flex-md-row">
+    <main class="contact-container d-flex flex-column flex-md-row align-items-center">
         
         <!-- IFRAME -->
-        <div class="iframe-container col-md-6 col-12">
+        <div class="iframe-container col-md-6 col-12 ms-2 d-flex justify-content-center">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.9724690827147!2d-62.99802592364868!3d-40.80659877137951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95f6980bb75e9307%3A0x33b174b92887f5d0!2sCEVEP%20Centro%20Veterinario%20Patag%C3%B3nico!5e0!3m2!1ses!2sar!4v1692935942039!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         
 
         <!-- CONTACT FORM -->
-        <div class="contact-info col-md-6 col-12 ">
-            <h2 class="text-center m-3">¿Tenés alguna consulta? <br> Dejanos tu mensaje</h2>
+        <div class="contact-info col-md-6 col-12 p-md-3">
+            <h3 class="text-center m-3">¿Tenés alguna consulta? <br> Dejanos tu mensaje</h3>
             <form class="contact-form d-flex flex-column col-md-4">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required class="m-1">
+            <input type="text" id="nombre" name="nombre" required max="50" class="m-1">
             
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" required class="m-1">
+            <input type="text" id="apellido" name="apellido" required max="50" class="m-1">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required max="60" class="input-email m-1">
             
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" required class="m-1"></textarea>
+            <textarea id="mensaje" name="mensaje" required maxlength="300" class="m-1"></textarea>
             <div class="text-center">
-              <input type="submit" value="Enviar" class="m-1">  
+              <input type="submit" value="Enviar" class="m-2">  
             </div>
             
             </form>

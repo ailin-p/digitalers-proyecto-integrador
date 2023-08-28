@@ -10,11 +10,11 @@
 }
 
 iframe {
-    width: 600px;
-    height: 300px;
+    width: 700px;
+    height: 500px;
 }
 
-.contact-info h2 {
+.contact-info h3 {
     color: var(--tertiary-color);
     font-weight: 600;
 }
@@ -31,7 +31,7 @@ label {
     color: rgb(0, 0, 0);
 }
 
-input[type="text"], textarea {
+input[type="text"], .input-email, textarea {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #a1a0a0;
