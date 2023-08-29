@@ -4,41 +4,15 @@
     --tertiary-color: #29A649;
 }
 
-@media only screen and (width >= 1024px) {
-
-    .main-container-form .info-register .register-text {
-        font-size: 2rem;
-    }
-
-    header .backHome {
-        top: 30px;
-        left: 30px;
-      }
-
-    header .backHome img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .contact-form {
-        width: 75%;
-    }
-
-}
-
 .main-container-form {
-    display: flex;
     margin: 90px 20px 20px 20px;
     padding: 20px;
     border-radius: 12px;
 }
 
 .backHome {
-    position: fixed;
     top: 10px;
     left: 10px;
-    color: inherit;
-    text-decoration: none;
   }
 
 .backHome img {
@@ -48,8 +22,8 @@
 
 /* Estilos para los servicios */
 
-.container-services {
-    padding: 20px !important;
+.main-container-form .info-register .container-services {
+    padding: 20px ;
 }
 
 .container-services section {
@@ -62,8 +36,8 @@
     transition: .7s;
   }
 
-  .product-service i {
-    font-size: 30px !important;
+.main-container-form .info-register .container-services .product-service i {
+    font-size: 30px;
     margin-bottom: 20px;
   }
   
@@ -114,7 +88,8 @@ select {
 }
 
 textarea {
-    resize: vertical;
+    resize: none;
+    min-height: 100px;
 }
 
 input[type="submit"] {
@@ -130,13 +105,28 @@ input[type="submit"] {
     transition: all 0.5s;
 }
 
-input[type="submit"]:hover {
-    background-color:  #f79234;
-}
+@media only screen and (width >= 1024px) {
 
-.input-textarea {
-    overflow: hidden;
-    resize: none;
-    min-height: 100px;
+    .main-container-form .info-register .register-text {
+        font-size: 2rem;
+    }
+
+    header .backHome {
+        top: 30px;
+        left: 30px;
+      }
+
+    header .backHome img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact-form {
+        width: 75%;
+    }
+    
+    input[type="submit"]:hover {
+    background-color:  #f79234;
+    }
+
 }
-  
