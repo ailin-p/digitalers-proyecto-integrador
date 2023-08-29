@@ -45,10 +45,6 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.card-about .about-content {
-    opacity: 1;
-}
-
 .about-content img {
     border-radius: 50%;
     width: 170px;
@@ -59,12 +55,18 @@ body {
 .about-content {
     padding: 20px;
     text-align: center;
-    opacity: 0;
+
 }
 
-/* .about-content h2 {
-    opacity: 0;
-} */
+.about-content h2 {
+    letter-spacing: 3px;
+    font-size: 4.5em;
+    color: rgba(255, 123, 0, 0.241);
+    pointer-events: none;
+    position: absolute;
+    top: 40%;
+    left: 0;
+}
 
 .about-content h3 {
     font-size: 1.3em;
