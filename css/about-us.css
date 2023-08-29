@@ -61,15 +61,9 @@ body {
     opacity: 0;
 }
 
-.about-content h2 {
-    letter-spacing: 3px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    font-size: 4.5em;
-    color: rgba(0, 0, 0, 0.046);
-    pointer-events: none;
-}
+/* .about-content h2 {
+    opacity: 0;
+} */
 
 .about-content h3 {
     font-size: 1.3em;
@@ -146,6 +140,25 @@ body {
         width: 200px;
         height: 200px;
         margin: 25px;
+    }
+
+    .about-content h2 {
+        letter-spacing: 3px;
+        font-size: 4.5em;
+        color: rgba(255, 123, 0, 0.241);
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: all 1s ease-in-out;
+        opacity: 0;
+    }
+
+    .card-about:hover h2 {
+        display: block;
+        top: 50%;
+        opacity: 1;
     }
 
     .about-content h3 {
