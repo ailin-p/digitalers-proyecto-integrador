@@ -21,18 +21,11 @@ body {
     height: 50px;
 }
 
-.main-about-container {
+.card-about-container {
     margin-top: 100px;
 }
 
-/* .main-about-container  {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-.main-about-container .card-about {
+.card-about-container .card-about {
     position: relative;
     width: 300px;
     height: 600px;
@@ -113,7 +106,7 @@ body {
 
 @media only screen and (width <= 1024px) {
 
-    .main-about-container .card-about {
+    .card-about-container .card-about {
         transform: none !important;
     }
 }
@@ -134,7 +127,7 @@ body {
         background-color: #dbb51d;
     }
     
-    .main-about-container .card-about {
+    .card-about-container .card-about {
         width: 400px;
         height: 600px;
     }

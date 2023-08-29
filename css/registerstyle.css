@@ -4,35 +4,24 @@
     --tertiary-color: #29A649;
 }
 
-@media only screen and (min-width:1024px) {
-    .info-register {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+@media only screen and (width >= 1024px) {
+
+    .main-container-form .info-register .register-text {
+        font-size: 2rem;
     }
 
-    .register-text {
-        text-align: center;
-        font-size: 2rem !important;
-    }
-
-    .backHome {
-        top: 30px !important;
-        left: 30px !important;
+    header .backHome {
+        top: 30px;
+        left: 30px;
       }
 
-    .backHome img {
-        width: 80px !important;
-        height: 80px !important;
+    header .backHome img {
+        width: 80px;
+        height: 80px;
     }
 
     .contact-form {
         width: 75%;
-    }
-
-    input[type="submit"] {
-        width: 80%;
     }
 
 }
