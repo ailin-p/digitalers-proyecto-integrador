@@ -26,18 +26,20 @@ body {
 .about-company {
     text-align: justify;
     line-height: 2;
-    width: auto;
-    height: auto;
-    overflow: auto;
 }
 
 .about-company h2 {
     font-size: 2.5rem;
 }
 
+.about-company p {
+    color: #914701;
+    margin-top: 1.5rem;
+}
+
 .about-container .card-about {
     width: 300px;
-    height: 540px;
+    height: 600px;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.1);
@@ -49,11 +51,11 @@ body {
     border-radius: 50%;
     width: 170px;
     height: 170px;
-    margin: 20px;
+    margin-bottom: 10px;
 }
 
 .about-content {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 
 }
@@ -69,21 +71,22 @@ body {
 }
 
 .about-content h3 {
-    font-size: 1.3em;
-    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
     z-index: -1;
 }
 
 .about-content p {
-    font-size: 1rem;
-    color: black;
+    text-align: justify;
+    font-size: 15px;
+    color: #914701;
     font-weight: 300;
-    margin-top: 20px;
+    margin: 5px;
+    letter-spacing: .5px;
 }
 
 .about-links a {
-    display: none;
-    position: relative;
     padding: 8px 20px;
     margin: 10px;
     background: var(--primary-color);
@@ -91,15 +94,15 @@ body {
     border-radius: 20px;
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all .3s ease-in-out;
 }
 
 .card-about .about-links {
+    margin-bottom: 7px;
     display: flex;
-}
-
-.card-about .about-links a{
-    display: block;
-    transform: translateY(-30px);
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* La idea no era hacer dos media queries pero no se me ocurrió otra forma de hacer que sólo en pantallas pequeñas no se muestre la animación de js que tiene la card */
@@ -123,12 +126,6 @@ body {
         height: 80px;
     }
 
-    .about-company {
-        width: 500px;
-        height: 400px;
-        overflow-y: scroll;
-    }
-
     .about-links a:hover {
         background-color: #dbb51d;
     }
@@ -142,7 +139,7 @@ body {
         border-radius: 50%;
         width: 200px;
         height: 200px;
-        margin: 25px;
+        margin-bottom: 10px;
     }
 
     .about-content h2 {
@@ -169,12 +166,10 @@ body {
     }
 
     .about-content p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .about-links a {
-        display: none;
-        position: relative;
         padding: 8px 20px;
         margin: 10px;
         background: var(--primary-color);
@@ -182,7 +177,6 @@ body {
         border-radius: 20px;
         text-decoration: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: all .4s ease-in-out;
     }
 
 }
