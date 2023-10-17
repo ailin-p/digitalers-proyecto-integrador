@@ -541,8 +541,32 @@ input:focus, textarea:focus {
 
 }
 
+/* Estilos para la página de admin */
 
+.main-table-container {
+    margin-top: 80px;
+}
 
+.table-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
+.table-title {
+    font-weight: bold;
+}
 
+.table-description {
+    font-size: .875rem;
+    font-family: monospace;
+}
 
+.table-price {
+    font-weight: bold;
+}
+
+textarea.form-control#descripcionProducto {
+    resize:none;
+}
