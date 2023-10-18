@@ -1,4 +1,4 @@
-const products = [
+let products = [
     {
         id: '96d4f329-29ee-44a9-9cc9-6a797f990000',
         image: '/assets/images/prod1.png',
@@ -37,13 +37,16 @@ const products = [
     },
 ]
 
+let idToEdit
+let btn = document.querySelector('button.btn[type="submit"]')
+
 //Obtenemos la tabla de productos desde el HTML
 const tableProductBody = document.querySelector("#table-product-body")
 
 //Cargamos los productos predeterminados
-displayProducts()
+displayProducts(products)
 
-const inputFilterHTML = document.getElementById("filter")
+let inputFilterHTML = document.getElementById("filter")
 
 const formProductsHTML = document.getElementById("formProduct")
 
@@ -54,9 +57,11 @@ formProductsHTML.addEventListener('submit', (evt) => {
     // Guardamos en una constante el acceso a los elementos del formulario
     const element = formProductsHTML.elements
 
+    //Si es undefined le asignamos un random ID, sino el id es igual a lo que tenía previamente idToEdit en la función de editar
+    const id = idToEdit === undefined ? crypto.randomUUID() : idToEdit
 
     const newProduct = {
-        id: crypto.randomUUID(),
+        id: id,
         image: element.image.value,
         title: element.title.value,
         description: element.description.value,
@@ -65,8 +70,24 @@ formProductsHTML.addEventListener('submit', (evt) => {
         creationDate: getEntryDate()
     }
 
-    products.push(newProduct)
-    displayProducts()
+    if(idToEdit) {
+        const index = products.findIndex(product => {
+            return product.id === idToEdit
+        })
+
+        products[index] = newProduct
+        idToEdit = undefined
+
+        btn.innerText = "Agregar"
+        btn.classList.remove("btn-success")
+
+    } else {
+        products.push(newProduct)
+    }
+
+
+    
+    displayProducts(products)
 
     formProductsHTML.reset()
     element.title.focus()
@@ -89,9 +110,9 @@ function getEntryDate() {
     return formattedDate
 }
 
-function displayProducts() {
+function displayProducts(arrayToDisplay) {
     tableProductBody.innerHTML = ""
-    products.forEach(function(product, index) {
+    arrayToDisplay.forEach(function(product) {
     tableProductBody.innerHTML += `
     <tr>
         <td class="table-img">
@@ -102,22 +123,64 @@ function displayProducts() {
         <td class="table-price">${product.price}</td>
         <td class="table-category">${product.category}</td>
         <td>
-            <button class="btn btn-danger btn-sm" onclick="removeProducts(${index})">
-                <i class="fa-solid fa-trash"></i>
-            </button>
+        <div class="d-flex gap-1">
+        <button class="btn-delete btn btn-danger btn-sm" onclick="removeProducts('${product.id}')">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+        <button class="btn btn-success btn-sm" onclick="editProduct('${product.id}')">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+    </div>
         </td>
   </tr>`
     })
 }
 
 //Función para filtrar/buscar productos
-
 inputFilterHTML.addEventListener('keyup', (evt) => {
+    const search = evt.target.value.toLowerCase();
+    
+    const result = products.filter(product => product.title.toLowerCase().includes(search));
+    
+    displayProducts(result);
+});
 
-})
 
-function removeProducts(productIndex) {
-    products.splice(productIndex, 1)
-    displayProducts()
+function removeProducts(idToFind) {
+    const indexFound = products.findIndex(product => product.id === idToFind);
+    if (indexFound !== -1) {
+        products.splice(indexFound, 1);
+        displayProducts(products);
+        inputFilterHTML.value = ""
+    }
 }
+
+const editProduct = function(recdID) {
+    const productToEdit = products.find((product) => {
+        if(product.id === recdID) {
+            return true
+        }
+    })
+
+    //Resguardo por si find devuelve undefined
+    if(!productToEdit) return
+
+    idToEdit = productToEdit.id
+
+    const element = formProductsHTML.elements
+    console.log(element)
+    element.title.value = productToEdit.title
+    element.price.value = productToEdit.price
+    element.category.value = productToEdit.category
+    element.image.value = productToEdit.image
+    element.description.value = productToEdit.description
+
+    btn.innerText = "Editar"
+    btn.classList.add("btn-success")
+
+}
+
+
+
+
 
