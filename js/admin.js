@@ -1,4 +1,4 @@
-let products = [
+let productsStart = [
     {
         id: '96d4f329-29ee-44a9-9cc9-6a797f990000',
         image: '/assets/images/prod1.png',
@@ -37,6 +37,15 @@ let products = [
     },
 ]
 
+//Si no encuentra nada, se pinta el array que tenemos con los productos predeterminados (de otra manera devolvería null y daría error)
+
+let products = JSON.parse(localStorage.getItem("products")) || productsStart
+
+//Si nunca hemos guadado en el localStorage, lo creamos en este if
+if(JSON.parse(localStorage.getItem("products")) === null ) {
+    localStorage.setItem("products", JSON.stringify(products))
+}
+
 let idToEdit
 let btn = document.querySelector('button.btn[type="submit"]')
 
@@ -70,7 +79,7 @@ formProductsHTML.addEventListener('submit', (evt) => {
         creationDate: getEntryDate()
     }
 
-    if(idToEdit) {
+    if (idToEdit) {
         const index = products.findIndex(product => {
             return product.id === idToEdit
         })
@@ -83,11 +92,16 @@ formProductsHTML.addEventListener('submit', (evt) => {
 
     } else {
         products.push(newProduct)
+
     }
-
-
-    
     displayProducts(products)
+    localStorage.setItem("products", JSON.stringify(products))
+    
+    Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado/modificado correctamente',
+        text: 'El producto se actualizó o modificó correctamente'
+    })
 
     formProductsHTML.reset()
     element.title.focus()
@@ -97,13 +111,13 @@ formProductsHTML.addEventListener('submit', (evt) => {
 function getEntryDate() {
     const date = new Date()
     const year = date.getFullYear
-    let month = date.getMonth() +1
-    if(month < 10) {
-        month = '0'+month
+    let month = date.getMonth() + 1
+    if (month < 10) {
+        month = '0' + month
     }
     let day = date.getDate
-    if(day < 10) {
-        day = '0'+day
+    if (day < 10) {
+        day = '0' + day
     }
     const formattedDate = `${year}-${month}-${day}`
 
@@ -112,8 +126,8 @@ function getEntryDate() {
 
 function displayProducts(arrayToDisplay) {
     tableProductBody.innerHTML = ""
-    arrayToDisplay.forEach(function(product) {
-    tableProductBody.innerHTML += `
+    arrayToDisplay.forEach(function (product) {
+        tableProductBody.innerHTML += `
     <tr>
         <td class="table-img">
         <img src="${product.image}" alt="${product.title}">
@@ -127,7 +141,7 @@ function displayProducts(arrayToDisplay) {
         <button class="btn-delete btn btn-danger btn-sm" onclick="removeProducts('${product.id}')">
             <i class="fa-solid fa-trash"></i>
         </button>
-        <button class="btn btn-success btn-sm" onclick="editProduct('${product.id}')">
+        <button class="btn btn-success btn-sm" onclick="editProduct('${product.id}')" data-bs-toggle="modal" data-bs-target="#formModal">
             <i class="fa-solid fa-pen-to-square"></i>
         </button>
     </div>
@@ -139,36 +153,60 @@ function displayProducts(arrayToDisplay) {
 //Función para filtrar/buscar productos
 inputFilterHTML.addEventListener('keyup', (evt) => {
     const search = evt.target.value.toLowerCase();
-    
+
     const result = products.filter(product => product.title.toLowerCase().includes(search));
-    
-    displayProducts(result);
+
+    displayProducts(result)
 });
 
 
 function removeProducts(idToFind) {
-    const indexFound = products.findIndex(product => product.id === idToFind);
-    if (indexFound !== -1) {
-        products.splice(indexFound, 1);
-        displayProducts(products);
-        inputFilterHTML.value = ""
-    }
+
+    Swal.fire({
+        title: 'Desea borrar producto',
+        icon: 'error',
+        text: 'Realmente desea elminar el producto?',
+        showCloseButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Borrar',
+        cancelButtonText: 'Cancelar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const indexFound = products.findIndex((product) => {
+                if (product.id === idToFind) {
+                    return true
+                }
+                return false
+            })
+            products.splice(indexFound, 1)
+            displayProducts(products)
+            //Seteamos en el localStorage el array actualizado con un producto menos
+            localStorage.setItem("products", JSON.stringify(products))
+            Swal.fire('¡BORRADO!', 'Producto borrado exitosamente', 'success')
+            inputFilterHTML.value = ""
+        }
+
+    })
+
+
+
+
 }
 
-const editProduct = function(recdID) {
+
+const editProduct = function (recdID) {
     const productToEdit = products.find((product) => {
-        if(product.id === recdID) {
+        if (product.id === recdID) {
             return true
         }
     })
 
     //Resguardo por si find devuelve undefined
-    if(!productToEdit) return
+    if (!productToEdit) return
 
     idToEdit = productToEdit.id
 
     const element = formProductsHTML.elements
-    console.log(element)
     element.title.value = productToEdit.title
     element.price.value = productToEdit.price
     element.category.value = productToEdit.category
@@ -179,8 +217,3 @@ const editProduct = function(recdID) {
     btn.classList.add("btn-success")
 
 }
-
-
-
-
-
