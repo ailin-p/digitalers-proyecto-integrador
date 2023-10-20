@@ -570,3 +570,12 @@ input:focus, textarea:focus {
 textarea.form-control#descripcionProducto {
     resize:none;
 }
+
+/* Estilos para login */
+
+.login-container {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

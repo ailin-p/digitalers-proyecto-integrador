@@ -1,0 +1,1 @@
+// Inputs a mostrar: nombre, email, provincia, fecha de nacimiento, boton de borrar
