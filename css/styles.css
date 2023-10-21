@@ -30,6 +30,12 @@ body {
     gap: 15px;
 }
 
+.user-info .nav-item {
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 5px;
+}
+
 .cart-icon, .user-icon{
     font-size: 1.4rem;
     padding: 0;

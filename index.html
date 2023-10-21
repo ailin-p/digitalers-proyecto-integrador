@@ -41,9 +41,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-reset" href="#">inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-reset" href="/pages/register/register.html">registro</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-reset" href="/pages/contact/contact.html">contacto</a>
                         </li>
@@ -55,9 +53,15 @@
                         <a href="#" class="cart-icon text-decoration-none">
                             <i class="bi bi-cart2"></i>
                         </a>
-                        <a href="#" class="user-icon" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <!-- <a href="#" class="user-icon" data-bs-toggle="modal" data-bs-target="#loginModal">
                             <i class="bi bi-person"></i>
-                        </a>
+                        </a> -->
+                        <ul class="d-flex gap-2 list-unstyled m-0 p-0 ">
+                            <li class="nav-item" id="loginHeader"><a class="text-reset text-decoration-none" href="/pages/login/login.html">iniciar sesión</a></li>
+                            <li class="nav-item" id="registerHeader"><a class="text-reset text-decoration-none" href="/pages/register/register.html">registrarse</a></li>
+                        </ul>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -324,42 +328,6 @@
     </main>
 
 
-
-    <!-- Button trigger modal -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header d-flex  align-items-center">
-            <div class="">
-                <h1 class="fs-5 text-center" id="loginModalLabel">Ingresar</h1>
-            </div>
-          <div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          
-        </div>
-        <!-- <div class="modal-body">
-          ...
-        </div> -->
-        <div class="modal-footer d-flex justify-content-center align-items-center">
-            <a href="/pages/login/login.html">
-                <button type="button" class="btn btn-warning">Ingresar</button>
-              </a>
-              
-              <a href="/pages/register/register.html">
-                <button type="button" class="btn btn-warning">Crear cuenta</button>
-              </a>
-              
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
     <!-- =====================================
     ============ SERVICES =================
     ===================================== -->
@@ -425,6 +393,7 @@
     </footer>
 
     <script src="/js/home.js"></script>
+    <script src="/js/user-info.js"></script>>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>

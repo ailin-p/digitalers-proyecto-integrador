@@ -104,8 +104,6 @@ formProductsHTML.addEventListener('submit', (evt) => {
     })
 
     formProductsHTML.reset()
-    element.title.focus()
-
 })
 
 function getEntryDate() {

@@ -40,9 +40,6 @@
                             <a class="nav-link text-reset" href="/index.html">inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-reset" href="/pages/register/register.html">registro</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-reset" href="#">contacto</a>
                         </li>
                         <li class="nav-item">
@@ -53,9 +50,15 @@
                         <a href="#" class="cart-icon text-decoration-none">
                             <i class="bi bi-cart2"></i>
                         </a>
-                        <a href="#" class="user-icon" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <!-- <a href="#" class="user-icon" data-bs-toggle="modal" data-bs-target="#loginModal">
                             <i class="bi bi-person"></i>
-                        </a>
+                        </a> -->
+                        <ul class="d-flex gap-2 list-unstyled m-0 p-0 ">
+                            <li class="nav-item" id="loginHeader"><a class="text-reset text-decoration-none" href="/pages/login/login.html">iniciar sesión</a></li>
+                            <li class="nav-item" id="registerHeader"><a class="text-reset text-decoration-none" href="/pages/register/register.html">registrarse</a></li>
+                        </ul>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -133,6 +136,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+        <script src="/js/user-info.js"></script>
 </body>
 
 </html>
