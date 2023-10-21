@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+<script>
+    const products = JSON.parse(localStorage.getItem("products"))
+    const search = window.location.search
+    const params = new URLSearchParams(search)
+    const id = params.get("id")
+    const product = products.find(product => {
+        if(product.id === id) {
+            return true
+        }
+    })
+
+    document.write(product.title)
+</script>
+</body>
+</html>
