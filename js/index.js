@@ -1,7 +1,6 @@
-const products = JSON.parse(localStorage.getItem("products")) || []
+const indexProducts = JSON.parse(localStorage.getItem("products")) || []
 const cardContainer = document.querySelector(".card-container")
-products.forEach(product => {
-    console.log(product.date)
+indexProducts.forEach(product => {
     cardContainer.innerHTML += `<article class="card-product">
                 <div class="card-product-header">
                     <img src="${product.image}" alt="${product.title}">
@@ -21,7 +20,4 @@ products.forEach(product => {
                     <button class="card-buy">Comprar</button>
                 </div>
             </article>`
-} )
-
-
-{/*  */}
+})
