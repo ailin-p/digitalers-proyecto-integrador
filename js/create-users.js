@@ -31,10 +31,11 @@ repeatPasswordField.addEventListener("input", validatePasswords);
 
 
 //Capturo evento submit del form
-registerForm.addEventListener("submit", (evt) => {
+// ...
 
+registerForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    console.log("Hola")
+
     // Obtengo los valores del formulario
     const fullname = document.getElementById("fullname").value;
     const email = document.getElementById("email").value;
@@ -43,6 +44,11 @@ registerForm.addEventListener("submit", (evt) => {
     const province = document.getElementById("province").value;
     const observations = document.getElementById("observations").value;
 
+    // Genera un UUID único para el ID del usuario
+    const userId = crypto.randomUUID();
+
+    // Define el rol por defecto como "ROLE_CLIENT"
+    const role = "ROLE_CLIENT";
 
     // Verifica si ya existe un usuario con el mismo email en localStorage
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -50,30 +56,33 @@ registerForm.addEventListener("submit", (evt) => {
 
     // Si existe, manda una alerta de ello y resetea el form
     if (existingUser) {
-    Swal.fire('ERROR!', 'Ya existe un usuario con ese correo electrónico. Intente nuevamente', 'error')
-    registerForm.reset()
+        Swal.fire('ERROR!', 'Ya existe un usuario con ese correo electrónico. Intente nuevamente', 'error');
+        registerForm.reset();
     } else {
-    // Crea un nuevo usuario
-    const newUser = {
-        fullname,
-        email,
-        password,
-        dateOfBirth,
-        province,
-        observations,
-    };
+        // Crea un nuevo usuario con el UUID como ID único
+        const newUser = {
+            id: userId, // Agrega el ID único
+            fullname,
+            email,
+            password,
+            dateOfBirth,
+            province,
+            observations,
+            role, // Establece el rol como "ROLE_CLIENT"
+        };
 
-    // Agrega el nuevo usuario al array de usuarios
-    users.push(newUser);
+        // Agrega el nuevo usuario al array de usuarios
+        users.push(newUser);
 
-    // Almacena el array de usuarios en localStorage
-    localStorage.setItem("users", JSON.stringify(users));
-    registerForm.reset();
+        // Almacena el array de usuarios en localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+        registerForm.reset();
 
-    Swal.fire('', 'Cuenta creada con éxito!', 'success')
+        Swal.fire('', 'Cuenta creada con éxito!', 'success');
     }
+
     setTimeout(() => {
-        document.location.href="/index.html"
+        document.location.href = "/index.html";
     }, 3000);
-    
 });
+

@@ -585,3 +585,9 @@ textarea.form-control#descripcionProducto {
     align-items: center;
     justify-content: center;
 }
+
+/* Estilos para tabla users */
+
+.main-table-users-container {
+    margin-top: 100px;
+}

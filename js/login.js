@@ -1,5 +1,5 @@
 const usersStart = [{
-        id: 1,
+        id: '1a8469c8-9235-4779-b927-1838eb281ba5',
         fullname: "Juan Pérez",
         email: "juan@example.com",
         password: "contraseña",
@@ -8,7 +8,7 @@ const usersStart = [{
         role: "ROLE_CLIENT"
     },
     {
-        id: 2,
+        id: '56b785e9-d90f-4605-96d8-40f098c1f576',
         fullname: "María López",
         email: "maria@example.com",
         password: "contraseña",
@@ -17,7 +17,7 @@ const usersStart = [{
         role: "ROLE_CLIENT"
     },
     {
-        id: 3,
+        id: 'f52805f9-dd28-4bd9-b7c0-2ec20a3367a1',
         fullname: "Carlos González",
         email: "admin@admin.com",
         password: "admin",
@@ -26,7 +26,7 @@ const usersStart = [{
         role: "ROLE_ADMIN"
     },
     {
-        id: 4,
+        id: 'a7a7d803-c335-4884-b318-80cec013e658',
         fullname: "Laura Sosa",
         email: "laura@example.com",
         password: "contraseña",
