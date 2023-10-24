@@ -43,7 +43,6 @@ if (localStorage.getItem("users") === null) {
 const users = JSON.parse(localStorage.getItem("users"))
 
 const loginForm = document.getElementById("login")
-console.log(loginForm)
 loginForm.addEventListener('submit', (evt) => {
     evt.preventDefault()
     console.log(evt)
