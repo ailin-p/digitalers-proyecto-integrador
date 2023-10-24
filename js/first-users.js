@@ -36,6 +36,6 @@ const usersStart = [{
 }
 ]
 
-if (localStorage.getItem("users") === null) {
+if (localStorage.getItem("users") === null || localStorage.getItem("users") === "[]") {
 localStorage.setItem("users", JSON.stringify(usersStart))
 }
