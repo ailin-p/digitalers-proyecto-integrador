@@ -89,13 +89,12 @@ formProductsHTML.addEventListener('submit', (evt) => {
         products[index] = newProduct
         idToEdit = undefined
 
-        btn.innerText = "Agregar"
-        btn.classList.remove("btn-success")
-
     } else {
         products.push(newProduct)
-
     }
+    btn.innerText = "Agregar"
+    btn.classList.remove("btn-success")
+
     displayProducts(products)
     localStorage.setItem("products", JSON.stringify(products))
     
@@ -106,6 +105,8 @@ formProductsHTML.addEventListener('submit', (evt) => {
     })
 
     formProductsHTML.reset()
+    const modal = bootstrap.Modal.getInstance(modalProducts)
+    modal.hide()
 })
 
 function getEntryDate() {
@@ -215,10 +216,10 @@ const editProduct = function (recdID) {
 
     btn.innerText = "Editar"
     btn.classList.add("btn-success")
-
-
 }
 
 modalProducts.addEventListener('hidden.bs.modal', event => {
-  formProductsHTML.reset()
+    btn.innerText = "Agregar"
+    btn.classList.remove("btn-success")
+    formProductsHTML.reset()
 })
