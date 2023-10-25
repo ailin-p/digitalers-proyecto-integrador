@@ -7,7 +7,7 @@ const headerForAdmin = document.getElementById("navbarSupportedContent")
 // Si hay un usuario logueado, ponemos nombre y pintamos botón de cerrar sesión
 if (currentUser) {
     headerUserInfoLogin.innerText = currentUser.fullname
-    headerUserInfoRegister.innerHTML = `<button onclick="logout()" style="color: #FF7A00 border:0">cerrar sesión</button>`
+    headerUserInfoRegister.innerHTML = `<button class="btn-logout" onclick="logout()">cerrar sesión</button>`
 
     // Si además ese usuario es admin, mostrar página admin
     if (currentUser.role === "ROLE_ADMIN") {
@@ -69,5 +69,3 @@ function logout() {
         window.location.href = "/index.html"
     }, 1500)
 }
-
-// Para agregar usuarios: tomar los datos del input del formulario de la página register, hacer un script que tome el evento submit del formulario y guarde en el localStorage el array users

@@ -608,8 +608,13 @@ textarea.form-control#descripcionProducto {
     justify-content: center;
 }
 
+.btn-logout {
+    color: #FF7A00;
+    border:0;
+}
 /* Estilos para tabla users */
 
 .main-table-users-container {
     margin-top: 100px;
 }
+
