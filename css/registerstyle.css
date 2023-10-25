@@ -13,7 +13,7 @@
 .backHome {
     top: 10px;
     left: 10px;
-  }
+}
 
 .backHome img {
     width: 50px;
@@ -23,31 +23,31 @@
 /* Estilos para los servicios */
 
 .main-container-form .info-register .container-services {
-    padding: 20px ;
+    padding: 20px;
 }
 
 .container-services section {
     margin-top: 20px;
 }
-  
-  .product-service {
+
+.product-service {
     text-align: center;
     padding: 20px;
     transition: .7s;
-  }
+}
 
 .main-container-form .info-register .container-services .product-service i {
     font-size: 30px;
     margin-bottom: 20px;
-  }
-  
-  .product-service h4 {
+}
+
+.product-service h4 {
     font-size: 22px;
     color: #2b2b2b;
     margin-top: 0;
-  }
+}
 
-  /* Estilos para el formulario */
+/* Estilos para el formulario */
 
 .contact-form {
     display: flex;
@@ -105,7 +105,7 @@ input[type="submit"] {
     transition: all 0.5s;
 }
 
-@media only screen and (width >= 1024px) {
+@media only screen and (width >=1024px) {
 
     .main-container-form .info-register .register-text {
         font-size: 2rem;
@@ -114,7 +114,7 @@ input[type="submit"] {
     header .backHome {
         top: 30px;
         left: 30px;
-      }
+    }
 
     header .backHome img {
         width: 80px;
@@ -124,9 +124,9 @@ input[type="submit"] {
     .contact-form {
         width: 75%;
     }
-    
+
     input[type="submit"]:hover {
-    background-color:  #f79234;
+        background-color: #f79234;
     }
 
 }

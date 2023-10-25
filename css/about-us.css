@@ -12,7 +12,7 @@ body {
 .backHome {
     top: 10px;
     left: 10px;
-  }
+}
 
 .backHome img {
     width: 50px;
@@ -106,19 +106,19 @@ body {
 
 /* La idea no era hacer dos media queries pero no se me ocurrió otra forma de hacer que sólo en pantallas pequeñas no se muestre la animación de js que tiene la card */
 
-@media only screen and (width <= 1024px) {
+@media only screen and (width <=1024px) {
 
     .about-container .card-about {
         transform: none !important;
     }
 }
 
-@media only screen and (width >= 1024px) {
+@media only screen and (width >=1024px) {
 
     header .backHome {
         top: 30px;
         left: 30px;
-      }
+    }
 
     header .backHome img {
         width: 80px;
@@ -128,7 +128,7 @@ body {
     .about-links a:hover {
         background-color: #dbb51d;
     }
-    
+
     .about-container .card-about {
         width: 400px;
         height: 600px;
@@ -167,7 +167,7 @@ body {
     .about-content p {
         font-size: 1.1rem;
     }
-    
+
     .about-links a {
         padding: 8px 20px;
         margin: 10px;
@@ -179,8 +179,3 @@ body {
     }
 
 }
-
-
-
-
-

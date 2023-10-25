@@ -5,7 +5,7 @@ loginForm.addEventListener('submit', (evt) => {
     evt.preventDefault()
     console.log(evt)
     //Capturo los valores de los inputs del login
-    const email = evt.target.elements.email.value.trim();
+    const email = evt.target.elements.email.value.trim()
     const password = evt.target.elements.password.value
 
     const userExist = users.find(usr => {
@@ -24,10 +24,10 @@ loginForm.addEventListener('submit', (evt) => {
     delete userExist.password
     localStorage.setItem("currentUser", JSON.stringify(userExist))
 
-    setTimeout(function() {
+    setTimeout(function () {
         window.location.href = "/index.html"
-    },  1500 )
+    }, 1500)
 
-    
+
 
 })

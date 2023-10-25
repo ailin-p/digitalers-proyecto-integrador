@@ -1,5 +1,4 @@
-let productsStart = [
-    {
+let productsStart = [{
         id: '96d4f329-29ee-44a9-9cc9-6a797f990000',
         image: '/assets/images/prod1.png',
         title: 'Piedras sanitarias Sanicat',
@@ -42,7 +41,7 @@ let productsStart = [
 let products = JSON.parse(localStorage.getItem("products")) || productsStart
 
 //Si nunca hemos guadado en el localStorage, lo creamos en este if
-if(JSON.parse(localStorage.getItem("products")) === null ) {
+if (JSON.parse(localStorage.getItem("products")) === null) {
     localStorage.setItem("products", JSON.stringify(products))
 }
 
@@ -97,7 +96,7 @@ formProductsHTML.addEventListener('submit', (evt) => {
 
     displayProducts(products)
     localStorage.setItem("products", JSON.stringify(products))
-    
+
     Swal.fire({
         icon: 'success',
         title: 'Producto agregado/modificado correctamente',
@@ -153,12 +152,12 @@ function displayProducts(arrayToDisplay) {
 
 //Función para filtrar/buscar productos
 inputFilterHTML.addEventListener('keyup', (evt) => {
-    const search = evt.target.value.toLowerCase();
+    const search = evt.target.value.toLowerCase()
 
-    const result = products.filter(product => product.title.toLowerCase().includes(search));
+    const result = products.filter(product => product.title.toLowerCase().includes(search))
 
     displayProducts(result)
-});
+})
 
 
 function removeProducts(idToFind) {
